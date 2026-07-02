@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, ArrowRight, Sparkles } from "lucide-react";
+import { Github, Linkedin, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { SiFlutter, SiReact, SiKotlin, SiSwift } from "react-icons/si";
+import { SiAndroid, SiApple, SiFlutter, SiReact } from "react-icons/si";
 
 const Hero = () => {
   const socialLinks = [
@@ -18,8 +18,8 @@ const Hero = () => {
   const techStack = [
     { icon: SiFlutter, name: "Flutter", color: "#02569B" },
     { icon: SiReact, name: "React Native", color: "#61DAFB" },
-    { icon: SiKotlin, name: "Kotlin", color: "#7F52FF" },
-    { icon: SiSwift, name: "Swift", color: "#F05138" },
+    { icon: SiAndroid, name: "Android", color: "#3DDC84" },
+    { icon: SiApple, name: "iOS", color: "#f2f2f2" },
   ];
 
   const scrollToProjects = () => {
@@ -30,7 +30,7 @@ const Hero = () => {
   return (
     <section
       id="about"
-      className="relative min-h-screen pt-12 md:pt-20 flex items-center px-6 md:px-12 lg:px-20 overflow-hidden bg-gradient-to-br from-[#282830] via-[#2d2d38] to-[#282830]"
+      className="relative min-h-screen pt-6 md:pt-12 flex items-center px-6 md:px-12 lg:px-20 overflow-hidden bg-gradient-to-br from-[#282830] via-[#2d2d38] to-[#282830]"
     >
       {/* Animated grid background */}
       <div className="absolute inset-0 overflow-hidden">
@@ -122,28 +122,37 @@ const Hero = () => {
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-              className="text-5xl md:text-6xl lg:text-7xl italic text-[#bb852b] leading-tight"
+              className="-mt-2 mb-4 text-5xl md:-mt-3 md:mb-6 md:text-6xl lg:text-7xl italic text-[#bb852b] leading-tight whitespace-nowrap"
               style={{ fontFamily: "var(--font-dancing-script)" }}
             >
-              Hello, I'm Sefina Kamile
+              Hello, I&apos;m Sefina Kamile
             </motion.h1>
 
             <motion.h2
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#f2f2f2] tracking-tight drop-shadow-[0_0_20px_rgba(187,133,43,0.3)]"
+              className="mt-2 text-3xl md:mt-3 md:text-4xl lg:text-5xl font-bold text-[#f2f2f2] tracking-tight drop-shadow-[0_0_20px_rgba(187,133,43,0.3)]"
             >
-              Mobile Application Engineer
+              Software Engineer
             </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.9, delay: 1.0, ease: "easeOut" }}
+              className="mt-2 text-lg md:mt-3 md:text-xl text-[#f2f2f2] tracking-tight"
+            >
+              Specializing in Mobile Applications & <span style={{ color: "#bb852b" }}>AI Solutions</span>
+            </motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}
+              transition={{ duration: 0.8, delay: 1.4, ease: "easeOut" }}
               className="text-lg md:text-xl text-[#a0a0a0] leading-relaxed max-w-xl"
             >
-              I enjoy transforming ideas into polished, user-focused mobile applications. My approach balances creativity with technical depth to deliver apps that truly make a difference.{" "}
+              I build scalable mobile applications and AI-powered solutions with a focus on performance, clean architecture, and intuitive user experiences that create lasting value{" "}
             </motion.p>
           </div>
 
@@ -183,9 +192,9 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="relative hidden lg:flex items-center justify-center"
+          className="relative hidden lg:flex items-center justify-start"
         >
-          <div className="relative w-full max-w-lg h-[500px]">
+          <div className="relative w-full max-w-lg h-[500px] ml-12">
             {/* Central glowing core */}
             <motion.div
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-[#bb852b]/20 blur-3xl"
@@ -270,11 +279,11 @@ const Hero = () => {
               transition={{ duration: 1, delay: 1.5 }}
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center"
             >
-              <div className="text-4xl font-bold text-[#f2f2f2] mb-2">
-                Tech Stack
+              <div className="mb-2 text-xl font-bold text-[#f2f2f2] md:text-2xl">
+                Mobile Solutions
               </div>
               <div className="text-sm text-[#a0a0a0]">
-                Cross-Platform Expertise
+                Native & Cross-Platform Apps
               </div>
             </motion.div>
 
@@ -316,3 +325,4 @@ const Hero = () => {
 };
 
 export default Hero;
+

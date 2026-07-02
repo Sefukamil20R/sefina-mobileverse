@@ -3,6 +3,8 @@
 import { motion } from "framer-motion"
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear()
+
   return (
   <footer className="relative bg-[#282830] py-12 overflow-hidden z-20">
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -68,7 +70,7 @@ export default function Footer() {
             }}
             className="text-lg font-light text-[#f2f2f2] tracking-wide"
           >
-            © 2025 Sefina Kamile. All rights reserved.
+            © {currentYear} Sefina Kamile. All rights reserved.
           </motion.p>
         </motion.div>
       </div>

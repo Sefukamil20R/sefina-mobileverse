@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar"
 import Hero from "@/components/Hero"
+import Skills from "@/components/SkillsSection"
 import Experience from "@/components/Experience"
 import Companies from "@/components/Companies"
 import Projects from "@/components/Projects"
@@ -16,6 +17,8 @@ export default function Home() {
 
       {/* Hero section */}
       <Hero />
+
+        <Skills />
 
   <Experience />
 

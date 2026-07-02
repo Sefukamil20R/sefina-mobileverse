@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Github, Lock } from "lucide-react"
+import { ExternalLink, Github, Lock } from "lucide-react"
 
 interface Project {
   id: number
@@ -9,19 +9,23 @@ interface Project {
   description: string
   mockupImage: string
   company?: string
+  liveLink?: string
+  liveLabel?: string
   githubLink?: string
   isClientWork: boolean
 }
 
-// Use the 8 mockups from public/MockUp — randomized order
+// Project cards
 const projects: Project[] = [
   {
     id: 1,
-    name: "MedaCare",
-    description: "A healthcare app enabling virtual consultations, AI-driven recommendations, and secure patient management.",
-    mockupImage: "/MockUp/MedaCare.png",
-    githubLink: "https://github.com/Sefukamil20R/MedaCare-Mobile",
-    isClientWork: false,
+    name: "Fayida App",
+    description: "A digital tutoring platform that enhances learning through interactive lessons, AI-assisted guidance, and personalized educational experiences.",
+    mockupImage: "/MockUp/fayida.png",
+    company: "Fayida",
+    liveLink: "https://play.google.com/store/apps/details?id=com.fayidaacademy.app",
+    liveLabel: "Live on Google Play",
+    isClientWork: true,
   },
   {
     id: 2,
@@ -29,10 +33,30 @@ const projects: Project[] = [
     description: "An Islamic wedding app connecting couples and families, streamlining event planning and providing essential wedding services.",
     mockupImage: "/MockUp/Qismati.png",
     company: "Qismati",
+    liveLink: "https://play.google.com/store/apps/details?id=com.qismati.qismati",
+    liveLabel: "Live on Google Play",
     isClientWork: true,
   },
   {
     id: 3,
+    name: "AASTU MAP",
+    description: "A smart campus navigation app built to help AASTU students and visitors easily find buildings, offices, and key locations with real-time guidance.",
+    mockupImage: "/MockUp/AASTUMAP.png",
+    company: "GDG",
+    liveLink: "https://aastu-map-project.web.app/",
+    liveLabel: "Download App",
+    isClientWork: true,
+  },
+  {
+    id: 4,
+    name: "MedaCare",
+    description: "A healthcare app enabling virtual consultations, AI-driven recommendations, and secure patient management.",
+    mockupImage: "/MockUp/MedaCare.png",
+    githubLink: "https://github.com/Sefukamil20R/MedaCare-Mobile",
+    isClientWork: false,
+  },
+  {
+    id: 5,
     name: "StaySphere",
     description: "A hotel booking app that helps users easily search, compare, and reserve accommodations with a seamless and user-friendly experience.",
     mockupImage: "/MockUp/Staysphere.png",
@@ -40,7 +64,7 @@ const projects: Project[] = [
     isClientWork: false,
   },
   {
-    id: 4,
+    id: 9,
     name: "Alenlachu",
     description: "A mental health app designed to offer virtual therapy sessions, emotional tracking, and guided wellness activities to support users’ daily well-being.",
     mockupImage: "/MockUp/Alenlachu.png",
@@ -48,23 +72,15 @@ const projects: Project[] = [
     isClientWork: true,
   },
   {
-    id: 5,
-    name: "AASTU MAP",
-    description: "A smart campus navigation app built to help AASTU students and visitors easily find buildings, offices, and key locations with real-time guidance.",
-    mockupImage: "/MockUp/AASTUMAP.png",
-    company: " GDG",
-    isClientWork: true,
-  },
-  {
-    id: 6,
-    name: "Ecom",
-    description: "A modern e-commerce platform that delivers seamless product browsing, secure payments, and an intuitive shopping experience across devices.",
-    mockupImage: "/MockUp/Ecom.png",
-    githubLink: "https://github.com/Sefukamil20R/Ecom",
+    id: 7,
+    name: "OCR Scanner",
+    description: "A smart mobile app that scans receipts, extracts key details with high accuracy, and sends the data securely to the backend for efficient record management.",
+    mockupImage: "/MockUp/ocr.png",
+    githubLink: "https://github.com/Sefukamil20R/smart-receipt-scanner",
     isClientWork: false,
   },
   {
-    id: 7,
+    id: 8,
     name: "Foodora",
     description: "A food delivery and grocery app that lets users order fresh meals and ingredients effortlessly, ensuring quick service and a smooth, reliable experience.",
     mockupImage: "/MockUp/Food.png",
@@ -72,11 +88,11 @@ const projects: Project[] = [
     isClientWork: false,
   },
   {
-    id: 8,
-    name: "OCR Scanner",
-    description: "A smart mobile app that scans receipts, extracts key details with high accuracy, and sends the data securely to the backend for efficient record management.",
-    mockupImage: "/MockUp/ocr.png",
-    githubLink: "https://github.com/Sefukamil20R/smart-receipt-scanner",
+    id: 6,
+    name: "Ecom",
+    description: "A modern e-commerce platform that delivers seamless product browsing, secure payments, and an intuitive shopping experience across devices.",
+    mockupImage: "/MockUp/Ecom.png",
+    githubLink: "https://github.com/Sefukamil20R/Ecom",
     isClientWork: false,
   },
 ]
@@ -157,8 +173,13 @@ export default function Projects() {
           viewport={{ once: true, margin: "-100px" }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-12"
         >
-          {projects.map((project) => (
-            <motion.div key={project.id} variants={itemVariants} whileHover="hover" className="group">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              variants={itemVariants}
+              whileHover="hover"
+              className={`group ${projects.length % 2 !== 0 && index === projects.length - 1 ? "md:col-span-2 lg:col-span-2 md:mx-auto md:max-w-xl" : ""}`}
+            >
               <motion.div
                 variants={hoverVariants}
                 className="bg-[#373543] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
@@ -207,12 +228,30 @@ export default function Projects() {
 
                 {/* Content */}
                 <div className="p-6 md:p-8">
-                  <h3 className="text-2xl font-bold text-white mb-2">{project.name}</h3>
+                  <div className="mb-2 flex items-start justify-between gap-4">
+                    <h3 className="text-2xl font-bold text-white">{project.name}</h3>
+                    {project.liveLink && (
+                      <span className="inline-flex shrink-0 items-center gap-2 rounded-full border border-[#C7922B]/40 bg-[#2f2b38] px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#f5f5f5]">
+                        <span className="h-2 w-2 rounded-full bg-emerald-400" />
+                        Live
+                      </span>
+                    )}
+                  </div>
                   <p className="text-gray-400 text-sm md:text-base mb-6 line-clamp-2">{project.description}</p>
 
                   {/* Buttons/Badges */}
                   <div className="flex items-center gap-3">
-                    {project.githubLink ? (
+                    {project.liveLink ? (
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-lg bg-[#bb852b] px-4 py-2 font-medium text-white transition-colors duration-200 hover:bg-[#a67a24]"
+                      >
+                        <ExternalLink size={18} />
+                        {project.liveLink.includes("play.google.com") ? "View on Google Play" : project.liveLabel || "Live App"}
+                      </a>
+                    ) : project.githubLink ? (
                       <a
                         href={project.githubLink}
                         target="_blank"

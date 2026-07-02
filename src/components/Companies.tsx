@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 const companies = [
   { name: "Safaricom", logo: "/logos/safaricom-logo.png" },
   { name: "Gebeya", logo: "/logos/GebeyaLogo.png" },
+  { name: "Fayida", logo: "/logos/fayda.png" },
   { name: "Ethioware", logo: "/logos/EthiowareLogo.png" },
   { name: "Google Developers Group", logo: "/logos/gdscsvg.svg" },
   { name: "Eskalate", logo: "/logos/eskalatesvg.svg" },

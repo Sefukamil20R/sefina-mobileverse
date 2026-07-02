@@ -6,6 +6,14 @@ import { useState } from "react"
 
 const experiences = [
   {
+    company: "Fayida Academy Educational Consultancy",
+    role: "Mobile App Developer",
+    description:
+      "Contributed to the development of a digital tutoring platform, building and maintaining Flutter-based mobile applications. Developed responsive UI components, integrated backend services, and delivered features that enhanced the learning experience, increased user engagement, and improved application performance.",
+    icon: Briefcase,
+    certificateUrl: null,
+  },
+  {
     company: "Safaricom Telecommunications Ethiopia PLC",
     role: "Mobile Application Engineer",
     description:
