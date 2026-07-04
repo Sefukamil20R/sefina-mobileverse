@@ -280,10 +280,10 @@ const Hero = () => {
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center"
             >
               <div className="mb-2 text-xl font-bold text-[#f2f2f2] md:text-2xl">
-                Mobile Solutions
+                Mobile Engineering
               </div>
               <div className="text-sm text-[#a0a0a0]">
-                Native & Cross-Platform Apps
+                Cross-Platform • Native • AI
               </div>
             </motion.div>
 

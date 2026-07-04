@@ -79,22 +79,22 @@ const projects: Project[] = [
     githubLink: "https://github.com/Sefukamil20R/smart-receipt-scanner",
     isClientWork: false,
   },
-  {
-    id: 8,
-    name: "Foodora",
-    description: "A food delivery and grocery app that lets users order fresh meals and ingredients effortlessly, ensuring quick service and a smooth, reliable experience.",
-    mockupImage: "/MockUp/Food.png",
-    githubLink: "https://github.com/Sefukamil20R/Foodora",
-    isClientWork: false,
-  },
-  {
-    id: 6,
-    name: "Ecom",
-    description: "A modern e-commerce platform that delivers seamless product browsing, secure payments, and an intuitive shopping experience across devices.",
-    mockupImage: "/MockUp/Ecom.png",
-    githubLink: "https://github.com/Sefukamil20R/Ecom",
-    isClientWork: false,
-  },
+  // {
+  //   id: 8,
+  //   name: "Foodora",
+  //   description: "A food delivery and grocery app that lets users order fresh meals and ingredients effortlessly, ensuring quick service and a smooth, reliable experience.",
+  //   mockupImage: "/MockUp/Food.png",
+  //   githubLink: "https://github.com/Sefukamil20R/Foodora",
+  //   isClientWork: false,
+  // },
+  // {
+  //   id: 6,
+  //   name: "Ecom",
+  //   description: "A modern e-commerce platform that delivers seamless product browsing, secure payments, and an intuitive shopping experience across devices.",
+  //   mockupImage: "/MockUp/Ecom.png",
+  //   githubLink: "https://github.com/Sefukamil20R/Ecom",
+  //   isClientWork: false,
+  // },
 ]
 
 const containerVariants: any = {
