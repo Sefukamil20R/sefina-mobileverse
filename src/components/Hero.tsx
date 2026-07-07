@@ -30,7 +30,7 @@ const Hero = () => {
   return (
     <section
       id="about"
-      className="relative min-h-screen pt-6 md:pt-12 flex items-center px-6 md:px-12 lg:px-20 overflow-hidden bg-gradient-to-br from-[#282830] via-[#2d2d38] to-[#282830]"
+      className="relative min-h-screen pt-28 pb-16 md:pt-36 md:pb-24 lg:py-0 flex items-center px-6 md:px-12 lg:px-20 overflow-hidden bg-gradient-to-br from-[#282830] via-[#2d2d38] to-[#282830]"
     >
       {/* Animated grid background */}
       <div className="absolute inset-0 overflow-hidden">
@@ -122,7 +122,7 @@ const Hero = () => {
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-              className="-mt-2 mb-4 text-5xl md:-mt-3 md:mb-6 md:text-6xl lg:text-7xl italic text-[#bb852b] leading-tight whitespace-nowrap"
+              className="-mt-2 mb-4 text-4xl sm:text-5xl md:-mt-3 md:mb-6 md:text-6xl lg:text-7xl italic text-[#bb852b] leading-tight md:whitespace-nowrap"
               style={{ fontFamily: "var(--font-dancing-script)" }}
             >
               Hello, I&apos;m Sefina Kamile
@@ -132,7 +132,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
-              className="mt-2 text-3xl md:mt-3 md:text-4xl lg:text-5xl font-bold text-[#f2f2f2] tracking-tight drop-shadow-[0_0_20px_rgba(187,133,43,0.3)]"
+              className="mt-2 text-2xl sm:text-3xl md:mt-3 md:text-4xl lg:text-5xl font-bold text-[#f2f2f2] tracking-tight drop-shadow-[0_0_20px_rgba(187,133,43,0.3)]"
             >
               Software Engineer
             </motion.h2>
@@ -141,7 +141,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.9, delay: 1.0, ease: "easeOut" }}
-              className="mt-2 text-lg md:mt-3 md:text-xl text-[#f2f2f2] tracking-tight"
+              className="mt-2 text-base sm:text-lg md:mt-3 md:text-xl text-[#f2f2f2] tracking-tight"
             >
               Specializing in Mobile Applications & <span style={{ color: "#bb852b" }}>AI Solutions</span>
             </motion.p>
@@ -150,7 +150,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.4, ease: "easeOut" }}
-              className="text-lg md:text-xl text-[#a0a0a0] leading-relaxed max-w-xl"
+              className="text-base sm:text-lg md:text-xl text-[#a0a0a0] leading-relaxed max-w-xl"
             >
               I build scalable mobile applications and AI-powered solutions with a focus on performance, clean architecture, and intuitive user experiences that create lasting value{" "}
             </motion.p>
